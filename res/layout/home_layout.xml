@@ -1,0 +1,62 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/welcome_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="@string/welcome" />
+    
+     <TextView
+        android:id="@+id/training_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/welcome_name"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="Training Material:" />
+     
+     <FrameLayout
+          android:id="@+id/home_fragment_content"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_below="@+id/training_text">
+      </FrameLayout>
+
+     <LinearLayout android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@color/black"
+         android:layout_alignParentBottom="true">
+         
+         <TextView 
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:tag="list"
+             android:onClick="onFooterTap"
+             android:clickable="true"
+             android:textColor="@color/white"
+             android:gravity="center"
+             android:text="LIST"/>
+         
+         <TextView 
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:tag="grid"
+             android:onClick="onFooterTap"
+             android:clickable="true"
+             android:textColor="@color/white"
+             android:gravity="center"
+             android:text="GRID"/>
+         
+     </LinearLayout>
+    
+</RelativeLayout>

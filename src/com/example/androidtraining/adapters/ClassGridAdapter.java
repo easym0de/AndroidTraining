@@ -1,5 +1,6 @@
 package com.example.androidtraining.adapters;
 
+import com.example.androidtraining.HomeActivity;
 import com.example.androidtraining.R;
 
 import android.content.Context;
@@ -22,6 +23,7 @@ public class ClassGridAdapter extends ArrayAdapter<String>{
 	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		final ClassGridAdapter self = this;
 		LayoutInflater inflater = (LayoutInflater) context
 			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
  
@@ -34,7 +36,17 @@ public class ClassGridAdapter extends ArrayAdapter<String>{
 		
 		rowView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Toast.makeText(context, value, Toast.LENGTH_LONG).show();
+            	if(value.contains("Class 6 - Make it rain")){
+            		((HomeActivity)context).startRain();
+            		self.remove("Class 6 - Make it rain");
+            		self.add("Class 6 - Stop the rain");
+            	} else if(value.contains("Class 6 - Stop the rain")){
+            		((HomeActivity)context).stopRain();
+            		self.remove("Class 6 - Stop the rain");
+            		self.add("Class 6 - Make it rain");
+            	}else {
+            		Toast.makeText(context, value, Toast.LENGTH_LONG).show();
+            	}
             }
         });
 		

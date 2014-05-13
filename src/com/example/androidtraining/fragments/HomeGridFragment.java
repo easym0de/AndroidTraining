@@ -22,7 +22,7 @@ import android.widget.AdapterView.OnItemClickListener;
 public class HomeGridFragment extends Fragment {
 	private ClassGridAdapter classGridAdapter;
 	
-	static final String[] CLASS_LIST = new String[] { "Class 1", "Class 2", "Class 3", "Class 4", "Class 5"};
+	static final String[] CLASS_LIST = new String[] { "Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6 - Make it rain"};
 	
 	@Override
 	  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

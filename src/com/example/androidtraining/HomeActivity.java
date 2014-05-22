@@ -7,7 +7,9 @@ import com.example.androidtraining.services.RainService;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -34,6 +36,13 @@ public class HomeActivity extends FragmentActivity {
 			nameView.setText("Welcome " + extras.getString("loginName"));
 		}
 		navigate("list");
+		
+		SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+    	
+    	//Read from SharedPreferences
+    	int sectionClicks = sharedPref.getInt("section_clicks", 0);
+    	
+    	((TextView)this.findViewById(R.id.section_clicks)).setText("Total Section Clicked: " + sectionClicks);
 		
 	}
 	

@@ -32,15 +32,16 @@ public final class R {
     public static final class id {
         public static final int class_details_icon=0x7f0a0001;
         public static final int class_grid=0x7f0a0002;
-        public static final int class_list=0x7f0a0006;
+        public static final int class_list=0x7f0a0007;
         public static final int class_title=0x7f0a0000;
-        public static final int home_fragment_content=0x7f0a0005;
-        public static final int menu_grid=0x7f0a000a;
-        public static final int menu_list=0x7f0a0009;
-        public static final int menu_login=0x7f0a0008;
-        public static final int name=0x7f0a0007;
-        public static final int training_text=0x7f0a0004;
-        public static final int welcome_name=0x7f0a0003;
+        public static final int home_fragment_content=0x7f0a0006;
+        public static final int menu_grid=0x7f0a000b;
+        public static final int menu_list=0x7f0a000a;
+        public static final int menu_login=0x7f0a0009;
+        public static final int name=0x7f0a0008;
+        public static final int section_clicks=0x7f0a0003;
+        public static final int training_text=0x7f0a0005;
+        public static final int welcome_name=0x7f0a0004;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

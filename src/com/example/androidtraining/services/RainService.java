@@ -7,6 +7,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
+import android.util.Log;
 import android.widget.Toast;
 
 public class RainService extends Service {
@@ -22,6 +23,7 @@ public class RainService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		Log.d("RainService", "oncreate of Rainservice called");
 		Toast.makeText(this,"Service created ...", Toast.LENGTH_SHORT).show();
 		Thread initBkgdThread = new Thread(new Runnable() {
 			public void run() { 
@@ -43,12 +45,7 @@ public class RainService extends Service {
 
 		m_mediaPlayer = MediaPlayer.create(this, R.raw.rain); 
 		m_mediaPlayer.start();
-		try {
-			Thread.sleep(400); 
-		} 
-		catch (InterruptedException e) {
-			e.printStackTrace(); 
-		}
+
 
 	}
 	

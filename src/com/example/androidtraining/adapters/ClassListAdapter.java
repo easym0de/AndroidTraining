@@ -4,6 +4,7 @@ import com.example.androidtraining.HomeActivity;
 import com.example.androidtraining.R;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,20 @@ public class ClassListAdapter extends ArrayAdapter<String>{
             	}else {
             		Toast.makeText(context, value, Toast.LENGTH_LONG).show();
             	}
+            	
+            	
+            	SharedPreferences sharedPref = ((HomeActivity)context).getPreferences(Context.MODE_PRIVATE);
+            	
+            	//Read from SharedPreferences
+            	int sectionClicks = sharedPref.getInt("section_clicks", 0);
+            	
+            	//Write to SharedPreferences
+            	SharedPreferences.Editor editor = sharedPref.edit();
+            	editor.putInt("section_clicks", sectionClicks + 1);
+            	editor.commit();
+            	
+            	((TextView)((HomeActivity)context).findViewById(R.id.section_clicks)).setText("Total Section Clicked: " + (sectionClicks + 1));
+
             }
         });
 		

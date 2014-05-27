@@ -51,15 +51,17 @@ public class ClassListAdapter extends ArrayAdapter<String>{
             	}
             	
             	
-            	SharedPreferences sharedPref = ((HomeActivity)context).getPreferences(Context.MODE_PRIVATE);
+            	
             	
             	//Read from SharedPreferences
-            	int sectionClicks = sharedPref.getInt("section_clicks", 0);
-            	
+            	int sectionClicks = ((HomeActivity)context).getClickCount();
+            	((HomeActivity)context).setClickCount(sectionClicks + 1);
+            	/*
             	//Write to SharedPreferences
-            	SharedPreferences.Editor editor = sharedPref.edit();
+            	SharedPreferences.Editor editor = ((HomeActivity)context)sharedPref.edit();
             	editor.putInt("section_clicks", sectionClicks + 1);
             	editor.commit();
+            	*/
             	
             	((TextView)((HomeActivity)context).findViewById(R.id.section_clicks)).setText("Total Section Clicked: " + (sectionClicks + 1));
 

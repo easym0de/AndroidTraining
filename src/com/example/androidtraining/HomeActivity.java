@@ -22,11 +22,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class HomeActivity extends FragmentActivity {
-
+	SharedPreferences sharedPref;
+	
+	private int clickCount = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_layout);
+		
+		SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 		
 		Intent intent = getIntent();
 		Bundle extras = intent.getExtras();
@@ -37,12 +42,43 @@ public class HomeActivity extends FragmentActivity {
 		}
 		navigate("list");
 		
-		SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+		//SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
     	
     	//Read from SharedPreferences
     	int sectionClicks = sharedPref.getInt("section_clicks", 0);
     	
+    	clickCount = sectionClicks;
+    	
     	((TextView)this.findViewById(R.id.section_clicks)).setText("Total Section Clicked: " + sectionClicks);
+		
+	}
+	
+	public int getClickCount(){
+		return clickCount;
+	}
+	
+	public void setClickCount(int clickCount){
+		this.clickCount = clickCount;
+	}
+	
+	public SharedPreferences getSharedPreferences(){
+		return sharedPref;
+	}
+	/*
+	public int getClickCount(){
+    	return sharedPref.getInt("section_clicks", 0);
+	}
+	*/
+	
+	@Override
+	public void onPause(){
+		super.onPause();
+		
+		SharedPreferences pref = this.getPreferences(Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = pref.edit();
+    	editor.putInt("section_clicks", this.getClickCount());
+    	editor.commit();
+		
 		
 	}
 	

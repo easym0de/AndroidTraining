@@ -46,22 +46,15 @@ public class ClassListAdapter extends ArrayAdapter<String>{
             		((HomeActivity)context).stopRain();
             		self.remove("Class 6 - Stop the rain");
             		self.add("Class 6 - Make it rain");
-            	}else {
+            	}else if(value.contains("Class 8 - Contacts")){
+            		((HomeActivity)context).launchContacts();
+            	} else {
             		Toast.makeText(context, value, Toast.LENGTH_LONG).show();
             	}
-            	
-            	
-            	
             	
             	//Read from SharedPreferences
             	int sectionClicks = ((HomeActivity)context).getClickCount();
             	((HomeActivity)context).setClickCount(sectionClicks + 1);
-            	/*
-            	//Write to SharedPreferences
-            	SharedPreferences.Editor editor = ((HomeActivity)context)sharedPref.edit();
-            	editor.putInt("section_clicks", sectionClicks + 1);
-            	editor.commit();
-            	*/
             	
             	((TextView)((HomeActivity)context).findViewById(R.id.section_clicks)).setText("Total Section Clicked: " + (sectionClicks + 1));
 

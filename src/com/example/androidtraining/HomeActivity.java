@@ -138,5 +138,10 @@ public class HomeActivity extends FragmentActivity {
 	public void stopRain(){
 		stopService(new Intent(this, RainService.class));
 	}
+	
+	public void launchContacts(){
+		Intent launchContactsIntent = new Intent(this, ContactsActivity.class);
+		this.startActivity(launchContactsIntent);
+	}
 
 }

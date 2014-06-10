@@ -4,12 +4,14 @@ import com.example.androidtraining.adapters.ClassListAdapter;
 import com.example.androidtraining.fragments.HomeGridFragment;
 import com.example.androidtraining.fragments.HomeListFragment;
 import com.example.androidtraining.services.RainService;
+import com.example.androidtraining.utils.ATUtils;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -30,6 +32,14 @@ public class HomeActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_layout);
+		
+		ATUtils utils = new ATUtils(this);
+		
+		if(utils.isTablet()) {
+	        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+	    } else {
+	        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	    }
 		
 		SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 		

@@ -23,6 +23,12 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
+        /** 
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw600dp devices (e.g. 7" tablets) here.
+    
+         */
+        public static final int class_grid_margin=0x7f060003;
         public static final int welcome_text_width=0x7f060002;
     }
     public static final class drawable {
@@ -32,15 +38,17 @@ public final class R {
     public static final class id {
         public static final int class_details_icon=0x7f0a0002;
         public static final int class_grid=0x7f0a0005;
-        public static final int class_list=0x7f0a000a;
+        public static final int class_list=0x7f0a000c;
         public static final int class_title=0x7f0a0001;
         public static final int contacts_list=0x7f0a0000;
         public static final int email=0x7f0a0004;
         public static final int home_fragment_content=0x7f0a0009;
-        public static final int menu_grid=0x7f0a000d;
-        public static final int menu_list=0x7f0a000c;
-        public static final int menu_login=0x7f0a000b;
+        public static final int left_pane=0x7f0a000a;
+        public static final int menu_grid=0x7f0a000f;
+        public static final int menu_list=0x7f0a000e;
+        public static final int menu_login=0x7f0a000d;
         public static final int name=0x7f0a0003;
+        public static final int right_pane=0x7f0a000b;
         public static final int section_clicks=0x7f0a0006;
         public static final int training_text=0x7f0a0008;
         public static final int welcome_name=0x7f0a0007;
